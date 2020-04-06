@@ -73,7 +73,8 @@ jobs:
 
       - name: Run Audits
         run: |
-          npx jest --json --outputFile=audits/ch-1.json --noStackTrace --config=./config.js
+          npx jest audits/ch-1 --json --outputFile=audits/ch-1.json --noStackTrace --config=./config.js
+          vendor/bin/phpunit ./audits/ch-1 --testdox
 
       - name: Report Audit Stats
         uses: ./.github/actions/ch-1
@@ -121,7 +122,8 @@ jobs:
 
       - name: Run Audits
         run: |
-          npx jest --json --outputFile=audits/ch-2.json --noStackTrace --config=./config.js
+          npx jest audits/ch-2 --json --outputFile=audits/ch-2.json --noStackTrace --config=./config.js
+          vendor/bin/phpunit ./audits/ch-2 --testdox
 
       - name: Report Audit Stats
         uses: ./.github/actions/ch-2
@@ -169,7 +171,8 @@ jobs:
 
       - name: Run Audits
         run: |
-          npx jest --json --outputFile=audits/ch-3.json --noStackTrace --config=./config.js
+          npx jest audits/ch-3 --json --outputFile=audits/ch-3.json --noStackTrace --config=./config.js
+          vendor/bin/phpunit ./audits/ch-3 --testdox
 
       - name: Report Audit Stats
         uses: ./.github/actions/ch-3
@@ -206,7 +209,7 @@ jobs:
 
       - name: Run Audits
         run: |
-          npx jest --json --outputFile=audits/ch-4.json --noStackTrace --config=./jest.config.js
+          npx jest audits/ch-4 --json --outputFile=audits/ch-4.json --noStackTrace --config=./jest.config.js
 
       - name: Report Audit Stats
         uses: ./.github/actions/ch-4
